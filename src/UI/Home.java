@@ -1,7 +1,8 @@
 package UI;
 
+import Models.Cashier;
+import Models.Manager;
 import Models.User;
-import javax.swing.JOptionPane;
 
 public class Home extends javax.swing.JFrame {
     
@@ -168,11 +169,15 @@ public class Home extends javax.swing.JFrame {
     private void btnCreateCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCashierActionPerformed
         
         if(this.user.Role.equalsIgnoreCase("Manager")){
-        this.setVisible(false);
-        CreateNewCashier createNewCashier = new CreateNewCashier(this);
-        createNewCashier.setVisible(true);
+            this.setVisible(false);
+            User user = new Manager();
+            user.giveAccessRight(this);
+//          CreateNewCashier createNewCashier = new CreateNewCashier(this);
+//          createNewCashier.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(this, "You haven't access!");
+            User user = new Cashier();
+            user.giveAccessRight(this);
+//          JOptionPane.showMessageDialog(this, "You haven't access!");
         }
         
     }//GEN-LAST:event_btnCreateCashierActionPerformed

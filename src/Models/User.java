@@ -1,12 +1,13 @@
 package Models;
 
 import DB.DBConnection;
+import UI.Home;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class User {
+public abstract class User {
     public static String UserName;
     public static String Password;
     public static String Role; 
@@ -70,6 +71,8 @@ public class User {
         ResultSet rs = pst.executeQuery();
         return rs;
     }
+    
+    public abstract void giveAccessRight(Home home);
     
     
 }

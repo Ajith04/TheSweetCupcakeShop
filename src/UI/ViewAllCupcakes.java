@@ -1,5 +1,6 @@
 package UI;
 
+import Models.GeneralUser;
 import Models.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class ViewAllCupcakes extends javax.swing.JFrame {
     
     public void getAllCupcakes(){
         try{
-        User user = new User();
+        User user = new GeneralUser();
         ResultSet rs = user.viewAllCupcakes();
         
         DefaultTableModel model = (DefaultTableModel) tblCupcakes.getModel();
@@ -152,7 +153,7 @@ public class ViewAllCupcakes extends javax.swing.JFrame {
         
         try{
             
-        User user = new User();
+        User user = new GeneralUser();
         ResultSet rs = user.searchCupcakes(searchText);
         
         DefaultTableModel model = (DefaultTableModel) tblCupcakes.getModel();

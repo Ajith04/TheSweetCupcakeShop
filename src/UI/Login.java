@@ -1,5 +1,6 @@
 package UI;
 
+import Models.GeneralUser;
 import Models.User;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
@@ -137,7 +138,7 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         try{
-        User user = new User();
+        User user = new GeneralUser();
         user.UserName = txtUserName.getText();
         char[] charPassword = txtPassword.getPassword();
         user.Password = new String(charPassword);

@@ -1,6 +1,7 @@
 package UI;
 
 import Models.Cupcake;
+import Models.GeneralUser;
 import Models.User;
 import javax.swing.JOptionPane;
 
@@ -170,7 +171,7 @@ public class AddNewCupcake extends javax.swing.JFrame {
         cupcake.setCategory((String) cboCategory.getSelectedItem());
         cupcake.setPrice(Double.parseDouble(txtPrice.getText()));
         
-        User user = new User();
+        User user = new GeneralUser();
         boolean rs = user.addCupcake(cupcake);
         
         if (rs == true) {

@@ -1,10 +1,18 @@
 package Models;
 
 import DB.DBConnection;
+import UI.CreateNewCashier;
+import UI.Home;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class Manager extends User{
+    
+    @Override
+    public void giveAccessRight(Home home){
+        CreateNewCashier createNewCashier = new CreateNewCashier(home);
+        createNewCashier.setVisible(true);
+    }
     
     public boolean addNewCashier(Cashier cashier){
         String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
